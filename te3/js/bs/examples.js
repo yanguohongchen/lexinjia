@@ -135,7 +135,6 @@ var Examples = function() {
 			$("#mask").click(function() {
 				_hideMask();
 			});
-
 		}
 		_titleClick();
 	};

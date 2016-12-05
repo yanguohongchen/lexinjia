@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<style>
+		
+		.menu-table{border:0;border-collapse:separate;border-spacing : 10px;}
+		/*控制cellspacing*/
+		.menu-table td{height: 30px;border: groove thin;}                                                                
+		/*控制cellpadding*/
+		.menu-dev{
+			display: none;
+		}
+		.active{
+			display:block;
+		}
+		.mask {       
+            position: fixed; top: 0px; filter: alpha(opacity=60); background-color: #777;     
+            z-index: 99; left: 0px;     
+            opacity:0.5; -moz-opacity:0.5;     
+        }     
+        
+        .active-click{
+        	border: groove thin #007AFF !important;
+        }
+		</style>
+	</head>
+
+	<body>
+		<div style="z-index: 1000; position: fixed;margin:0;width: 100%;text-align: center;background-color: white;" >
+		<div style="background-color: white;z-index: 100;" class="menu-dev" id="buget_div">
+			<table width="100%" class="menu-table">
+				<tr>
+					<td class="active-click" bugetId="-1">不限</td>
+					<td bugetId="1">8w以下</td>
+					<td bugetId="2">8-10w</td>
+				</tr>
+				<tr>
+					<td bugetId="3">10-14w</td>
+					<td bugetId="4">14-20w</td>
+					<td bugetId="5">20-30w</td>
+				</tr>
+				<tr>
+					<td bugetId="6">30-40w</td>
+					<td bugetId="7">40-50w</td>
+					<td bugetId="8">50w以上</td>
+				</tr>
+			</table>
+		</div>
+		<div style="background-color: white;z-index: 100;" class="menu-dev" id="area_div">
+			<table width="100%"  border="1" class="menu-table" >
+				<tr>
+					<td class="active-click" areaId="-1">不限</td>
+					<td areaId="1">70㎡以下</td>
+					<td areaId="2">70-80㎡</td>
+				</tr>
+				<tr>
+					<td areaId="3">80-90㎡</td>
+					<td areaId="4">90-100㎡</td>
+					<td areaId="5">100-110㎡</td>
+				</tr>
+				<tr>
+					<td areaId="6">110-130㎡</td>
+					<td areaId="7">130-150㎡</td>
+					<td areaId="8">150以上</td>
+				</tr>
+			</table>
+		</div>
+		<div style="background-color: white;z-index: 1000;" class="menu-dev" id="layout_div">
+			<table width="100%"  border="1" class="menu-table" >
+				<tr>
+					<td class="active-click" layoutId="-1">不限</td>
+					<td layoutId="1">一居</td>
+					<td layoutId="2">两居</td>
+				</tr>
+				<tr>
+					<td layoutId="3">三居</td>
+					<td layoutId="4">四居</td>
+					<td layoutId="5">小户型</td>
+				</tr>
+				<tr>
+					<td layoutId="6">大户型</td>
+					<td layoutId="7">别墅</td>
+					<td layoutId="8">复式</td>
+				</tr>
+				<tr>
+					<td layoutId="9">公寓</td>
+					<td layoutId="10">跃层</td>
+					<td layoutId="11">LOFT</td>
+				</tr>
+				<tr>
+					<td layoutId="12">阁楼</td>
+					<td layoutId="13">公装</td>
+				</tr>
+			</table>
+		</div>
+		<div style="background-color: white;z-index: 1000;" class="menu-dev"  id="style_div">
+			<table width="100%"  border="1" class="menu-table" >
+				<tr>
+					<td class="active-click" styleId="-1">不限</td>
+					<td styleId="1">现代</td>
+					<td styleId="2">简约</td>
+				</tr>
+				<tr>
+					<td styleId="3">韩式</td>
+					<td styleId="4">地中海</td>
+					<td styleId="5">欧式</td>
+				</tr>
+				<tr>
+					<td styleId="6">中式</td>
+					<td styleId="7">日式</td>
+					<td styleId="8">新古典</td>
+				</tr>
+				<tr>
+					<td styleId="9">宜家</td>
+					<td styleId="10">田园</td>
+					<td styleId="11">混搭</td>
+				</tr>
+				<tr>
+					<td styleId="12">清新</td>
+					<td styleId="13">小资</td>
+					<td styleId="14">美式</td>
+				</tr>
+			</table>
+		</div>
+		</div>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll" id="example_list_div" >
+				
+			</div>
+		</div>
+		<div id="mask" class="mask"></div>   
+		<script type="text/arttemp" id="example_tpl">
+			{{each list as value i}}
+		        <div class="mui-card" exampleId="{{value.examplesEntity.id}}">
+					<div class="mui-card-header mui-card-media">
+						<img src="{{value.user.pic}}"  style="width:45px;height:40px"/>
+						<div class="mui-media-body">
+							{{value.user.nickName}}
+							<p>发表于 {{value.examplesEntity.createTime | dateFormat:'yyyy年 MM月 dd日 hh:mm:ss'}}</p>
+						</div>
+					</div>
+					<img src="{{value.examplesEntity.headPic}}" alt="" width="100%"/>
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<p>{{value.examplesEntity.style | styleJson}}▪{{value.examplesEntity.layout | layoutJson}}▪{{value.examplesEntity.area}}平方▪{{value.examplesEntity.budget}}万</p>
+							<p>{{value.examplesEntity.address}}</p>
+							<p style="color: #333;">{{value.examplesEntity.introduction}}</p>
+						</div>
+					</div>
+					<!--<div class="mui-card-footer">
+						<a class="mui-card-link">Like</a>
+						<a class="mui-card-link">Comment</a>
+						<a class="mui-card-link">Read more</a>
+					</div>-->
+				</div>
+		    {{/each}}
+			
+		</script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.lazyload.js"></script>
+		<script src="../js/mui.lazyload.img.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.1.js" ></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/base.js" ></script>
+		<script type="text/javascript" src="../js/bs/dic.js" ></script>
+		<script type="text/javascript" src="../js/bs/sub.js" ></script>
+		<script>
+			Sub.init();
+		</script>
+	</body>
+
+</html>

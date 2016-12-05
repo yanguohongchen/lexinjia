@@ -4,7 +4,7 @@
  */
 var Base = function() {
 	//请求base地址
-	var requestUrl = ["http://192.168.1.100:8080/xinshujia-restful", "http://localhost/"];
+	var requestUrl = ["http://192.168.1.103:8080/xinshujia-restful", "http://localhost/"];
 
 	var _getRequestUrl = function(index) {
 		return requestUrl[index];
@@ -62,8 +62,8 @@ var Base = function() {
 		}
 
 		var ajaxurl = _getRequestUrl(serverIndex) + action;
-		console.log("url:"+ajaxurl);
-		console.log("param:"+parameter);
+		console.log("url:" + ajaxurl);
+		console.log("param:" + parameter);
 		$.ajax({
 			//地址格式
 			// url : '192.168.253.166',
@@ -78,20 +78,35 @@ var Base = function() {
 			data: parameter,
 			// scriptCharset : 'utf-8',
 			success: function(jsonstr) {
-				console.log("result:"+JSON.stringify(jsonstr));
+				console.log("result:" + JSON.stringify(jsonstr));
 				if(callback != null) {
-					if(jsonstr.code == "200") //请求正常
-					{
-						callback(jsonstr.data);
+					if(jsonstr.code == "0") {
+						mui.toast(jsonstr.businessMsg.businessNote);
 					} else {
-						alert("业务异常");
+						if(care) {
+							if(jsonstr.code == "200") //请求正常
+							{
+								callback(jsonstr.data, jsonstr.code, jsonstr.businessMsg);
+							} else if("401" == jsonstr.code) {
+								mui.toast("请登录！");
+							} else {
+								callback(jsonstr.data, jsonstr.code, jsonstr.businessMsg);
+							}
+						} else {
+							if(jsonstr.code == "200") //请求正常
+							{
+								callback(jsonstr.data);
+							} else if("500" == jsonstr.code) {
+								mui.toast("业务异常！");
+							}
+						}
 					}
 				}
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
 				//TODO:隐藏弹出框
 				//TODO:提示消息
-				alert(JSON.stringify(jqXHR) + "," + textStatus + "," + errorThrown);
+				mui.toast(JSON.stringify(jqXHR) + "," + textStatus + "," + errorThrown);
 				//						alert(jqXHR.responseText);
 				//						alert("error");
 			}
@@ -153,7 +168,7 @@ var Base = function() {
 		apiRequest: function(action, params, callback) {
 			_apiRequest(action, params, callback);
 		},
-		getUrlParamValue:function(name){
+		getUrlParamValue: function(name) {
 			return _getUrlParamValue(name);
 		}
 	};

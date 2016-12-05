@@ -218,7 +218,8 @@
 					"html/example-list.html",
 					"html/my-example-list.html",
 					"html/card.html",
-					"html/examples.html"
+					"html/examples.html",
+					"html/pullrefresh_main.html"
 				],
 				"priority": 1
 			},
@@ -405,6 +406,52 @@
 				"refer": [
 					"html/imageviewer.html"
 				],
+				"priority": 0
+			},
+			"html/pullrefresh_main.html": {
+				"resources": [
+					"html/pullrefresh_sub.html",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/base.js",
+					"js/bs/dic.js",
+					"js/jquery-1.11.1.js",
+					"js/template.js",
+					"js/mui.lazyload.js",
+					"js/bs/examples.js",
+					"js/mui.lazyload.img.js",
+					"js/bs/examplesDemo.js",
+					"css/app.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/pullrefresh_sub.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/bs/sub.js",
+					"js/base.js",
+					"js/bs/dic.js",
+					"js/jquery-1.11.1.js",
+					"js/template.js",
+					"js/mui.lazyload.js",
+					"js/mui.lazyload.img.js"
+				],
+				"refer": [
+					"html/imageviewer.html"
+				],
+				"priority": 0
+			},
+			"tab-webview-subpage-setting.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},

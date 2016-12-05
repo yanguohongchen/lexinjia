@@ -1,175 +1,223 @@
 {
-  "main.html": {
-    "refer": [
-      "setting.html",
-      "tab-webview-subpage-about.html",
-      "tab-webview-subpage-setting.html",
-      "tab-webview-subpage-chat.html",
-      "tab-webview-subpage-contact.html",
-      "html/imageviewer.html",
-      "html/lazyload-image.html",
-      "html/example-list.html",
-      "html/news-list.html",
-      "html/my-example-list.html",
-      "html/card.html",
-      "html/examples.html"
-    ],
-    "resources": [
-      "tab-webview-subpage-about.html",
-      "fonts/mui.ttf",
-      "js/app.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "html/news-list.html"
-    ]
-  },
-  "login.html": {
-    "resources": [
-      "js/app.js",
-      "js/mui.min.js",
-      "images/sinaweibo.png",
-      "css/mui.min.css",
-      "css/style.css",
-      "images/weixin.png",
-      "images/qq.png",
-      "js/mui.enterfocus.js"
-    ],
-    "refer": [
-      "main.html",
-      "reg.html"
-    ]
-  },
-  "setting.html": {
-    "resources": [
-      "libs/easymob-webim-sdk/easemob.im-1.0.5.js",
-      "fonts/mui.ttf",
-      "libs/easymob-webim-sdk/json2.js",
-      "libs/easymob-webim-sdk/jquery-1.11.1.js",
-      "js/mui.locker.js",
-      "js/feedback.js",
-      "css/feedback-page.css",
-      "js/feedback-page.js",
-      "libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
-      "js/mui.view.js",
-      "images/iconfont-tianjia.png"
-    ],
-    "refer": []
-  },
-  "html/imageviewer.html": {
-    "resources": [
-      "js/mui.zoom.js",
-      "js/mui.previewimage.js",
-      "images/muwu.jpg",
-      "images/yuantiao.jpg",
-      "images/shuijiao.jpg",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "js/base.js",
-      "js/bs/example-details.js",
-      "js/jquery-1.11.1.js",
-      "js/template.js",
-      "js/bs/dic.js",
-      "images/cbd.jpg"
-    ],
-    "refer": []
-  },
-  "html/lazyload-image.html": {
-    "resources": [
-      "images/60x60.gif",
-      "js/mui.lazyload.js",
-      "js/mui.lazyload.img.js",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "js/template.js",
-      "js/zepto.js"
-    ],
-    "refer": []
-  },
-  "html/example-list.html": {
-    "resources": [
-      "images/60x60.gif",
-      "js/bs/example-list.js",
-      "js/template.js",
-      "js/mui.lazyload.js",
-      "js/zepto.js",
-      "js/mui.lazyload.img.js",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "html/imageviewer.html",
-      "images/cbd.jpg",
-      "images/yuantiao.jpg",
-      "images/logo.png",
-      "css/app.css"
-    ],
-    "refer": [
-      "html/imageviewer.html"
-    ]
-  },
-  "html/news-list.html": {
-    "resources": [
-      "js/bs/example-list.js",
-      "js/template.js",
-      "js/mui.lazyload.js",
-      "js/zepto.js",
-      "js/mui.lazyload.img.js",
-      "images/60x60.gif",
-      "js/bs/news-list.js",
-      "css/app.css",
-      "js/mui.min.js",
-      "css/mui.min.css"
-    ],
-    "refer": [
-      "html/imageviewer.html"
-    ]
-  },
-  "html/my-example-list.html": {
-    "resources": [
-      "js/bs/my-example-list.js",
-      "js/mui.min.js",
-      "css/app.css",
-      "images/60x60.gif",
-      "css/mui.min.css",
-      "js/template.js",
-      "js/mui.lazyload.js",
-      "js/zepto.js",
-      "js/mui.lazyload.img.js"
-    ],
-    "refer": [
-      "html/imageviewer.html"
-    ]
-  },
-  "html/card.html": {
-    "resources": [
-      "images/cbd.jpg",
-      "images/yuantiao.jpg",
-      "images/logo.png"
-    ]
-  },
-  "html/examples.html": {
-    "resources": [
-      "images/cbd.jpg",
-      "images/yuantiao.jpg",
-      "images/logo.png",
-      "js/mui.min.js",
-      "css/app.css",
-      "css/mui.min.css",
-      "js/bs/examples.js",
-      "js/zepto.js",
-      "js/base.js",
-      "js/jquery-1.11.1.js",
-      "js/template.js",
-      "js/mui.lazyload.js",
-      "js/mui.lazyload.img.js",
-      "js/bs/dic.js",
-      "images/muwu.jpg",
-      "fonts/mui.ttf",
-      "images/shuijiao.jpg"
-    ],
-    "refer": [
-      "html/imageviewer.html"
-    ]
-  }
+	"main.html": {
+		"refer": [
+			"setting.html",
+			"tab-webview-subpage-about.html",
+			"tab-webview-subpage-setting.html",
+			"tab-webview-subpage-chat.html",
+			"tab-webview-subpage-contact.html",
+			"html/imageviewer.html",
+			"html/lazyload-image.html",
+			"html/example-list.html",
+			"html/news-list.html",
+			"html/my-example-list.html",
+			"html/card.html",
+			"html/examples.html",
+			"html/pullrefresh_main.html"
+		],
+		"resources": [
+			"tab-webview-subpage-about.html",
+			"fonts/mui.ttf",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"html/news-list.html"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"images/sinaweibo.png",
+			"css/mui.min.css",
+			"css/style.css",
+			"images/weixin.png",
+			"images/qq.png",
+			"js/mui.enterfocus.js"
+		],
+		"refer": [
+			"main.html",
+			"reg.html"
+		]
+	},
+	"setting.html": {
+		"resources": [
+			"libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+			"fonts/mui.ttf",
+			"libs/easymob-webim-sdk/json2.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"js/mui.locker.js",
+			"js/feedback.js",
+			"css/feedback-page.css",
+			"js/feedback-page.js",
+			"libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+			"js/mui.view.js",
+			"images/iconfont-tianjia.png",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": []
+	},
+	"html/imageviewer.html": {
+		"resources": [
+			"js/mui.zoom.js",
+			"js/mui.previewimage.js",
+			"images/muwu.jpg",
+			"images/yuantiao.jpg",
+			"images/shuijiao.jpg",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/base.js",
+			"js/bs/example-details.js",
+			"js/jquery-1.11.1.js",
+			"js/template.js",
+			"js/bs/dic.js",
+			"images/cbd.jpg"
+		],
+		"refer": []
+	},
+	"html/lazyload-image.html": {
+		"resources": [
+			"images/60x60.gif",
+			"js/mui.lazyload.js",
+			"js/mui.lazyload.img.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/template.js",
+			"js/zepto.js"
+		],
+		"refer": []
+	},
+	"html/example-list.html": {
+		"resources": [
+			"images/60x60.gif",
+			"js/bs/example-list.js",
+			"js/template.js",
+			"js/mui.lazyload.js",
+			"js/zepto.js",
+			"js/mui.lazyload.img.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"html/imageviewer.html",
+			"images/cbd.jpg",
+			"images/yuantiao.jpg",
+			"images/logo.png",
+			"css/app.css"
+		],
+		"refer": [
+			"html/imageviewer.html"
+		]
+	},
+	"html/news-list.html": {
+		"resources": [
+			"js/bs/example-list.js",
+			"js/template.js",
+			"js/mui.lazyload.js",
+			"js/zepto.js",
+			"js/mui.lazyload.img.js",
+			"images/60x60.gif",
+			"js/bs/news-list.js",
+			"css/app.css",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"html/imageviewer.html"
+		]
+	},
+	"html/my-example-list.html": {
+		"resources": [
+			"js/bs/my-example-list.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"images/60x60.gif",
+			"css/mui.min.css",
+			"js/template.js",
+			"js/mui.lazyload.js",
+			"js/zepto.js",
+			"js/mui.lazyload.img.js"
+		],
+		"refer": [
+			"html/imageviewer.html"
+		]
+	},
+	"html/card.html": {
+		"resources": [
+			"images/cbd.jpg",
+			"images/yuantiao.jpg",
+			"images/logo.png"
+		]
+	},
+	"html/examples.html": {
+		"resources": [
+			"images/cbd.jpg",
+			"images/yuantiao.jpg",
+			"images/logo.png",
+			"js/mui.min.js",
+			"css/app.css",
+			"css/mui.min.css",
+			"js/bs/examples.js",
+			"js/zepto.js",
+			"js/base.js",
+			"js/jquery-1.11.1.js",
+			"js/template.js",
+			"js/mui.lazyload.js",
+			"js/mui.lazyload.img.js",
+			"js/bs/dic.js",
+			"images/muwu.jpg",
+			"fonts/mui.ttf",
+			"images/shuijiao.jpg"
+		],
+		"refer": [
+			"html/imageviewer.html"
+		]
+	},
+	"html/pullrefresh_main.html": {
+		"resources": [
+			"html/pullrefresh_sub.html",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/base.js",
+			"js/bs/dic.js",
+			"js/jquery-1.11.1.js",
+			"js/template.js",
+			"js/mui.lazyload.js",
+			"js/bs/examples.js",
+			"js/mui.lazyload.img.js",
+			"js/bs/examplesDemo.js",
+			"css/app.css"
+		],
+		"refer": [
+			"html/pullrefresh_sub.html"
+		]
+	},
+	"html/pullrefresh_sub.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/bs/sub.js",
+			"js/base.js",
+			"js/bs/dic.js",
+			"js/jquery-1.11.1.js",
+			"js/template.js",
+			"js/mui.lazyload.js",
+			"js/mui.lazyload.img.js"
+		],
+		"refer": [
+			"html/imageviewer.html"
+		]
+	},
+	"tab-webview-subpage-setting.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		]
+	}
 }

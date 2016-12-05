@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<style>
+			#example_content .mui-pull-top-pocket{
+			  top: 45px !important;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div style="z-index: 1000; position: fixed;margin:0;width: 100%;text-align: center;background-color: white;" >
+			<table width="100%" style="height: 50px;line-height: 50px;" > 
+				<tr>
+					<td class="menu-title" id="t1"><span id="area-name">面积</span><span id="tu1" class="title-icon mui-icon mui-icon-arrowup"></span></td>
+					<td class="menu-title" id="t2"><span id="buget-name">预算</span><span id="tu2" class="title-icon mui-icon mui-icon-arrowup"></span></td>
+					<td class="menu-title" id="t3"><span id="layout-name">户型</span><span id="tu3" class="title-icon mui-icon mui-icon-arrowup"></span></td>
+					<td class="menu-title" id="t4"><span id="style-name">风格</span><span id="tu4" class="title-icon mui-icon mui-icon-arrowup"></span></td>
+				</tr>
+			</table>
+		</div>
+		<div class="mui-content" id="example_content">
+		
+		</div>
+		
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.lazyload.js"></script>
+		<script src="../js/mui.lazyload.img.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.1.js" ></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/base.js" ></script>
+		<script type="text/javascript" src="../js/bs/dic.js" ></script>
+		<script type="text/javascript" src="../js/bs/examplesDemo.js" ></script>
+		<script>
+			Examples.init();
+		</script>
+	</body>
+
+</html>
