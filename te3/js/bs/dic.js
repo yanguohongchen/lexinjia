@@ -37,6 +37,14 @@ var Dic = function() {
 		layoutJson: function(str) {
 			return dic.layoutMap[str];
 		},
+		placeMap: {
+			100001: "新闻广告位",
+			100002: "新闻主题位"
+		},
+		placeJson: function(str) {
+			return dic.placeMap[str];
+		},
+		
 		dateFormatFunc :function(date, format) {
 		date = new Date(date);
 		var map = {

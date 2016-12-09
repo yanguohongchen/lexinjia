@@ -4,7 +4,7 @@
  */
 var Base = function() {
 	//请求base地址
-	var requestUrl = ["http://192.168.1.103:8080/xinshujia-restful", "http://localhost/"];
+	var requestUrl = ["http://interface.lexinfamily.com:8080/xinshujia-restful", "http://localhost/"];
 
 	var _getRequestUrl = function(index) {
 		return requestUrl[index];

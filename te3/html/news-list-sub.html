@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<style>
+		
+		.menu-table{border:0;border-collapse:separate;border-spacing : 10px;}
+		/*控制cellspacing*/
+		.menu-table td{height: 30px;border: groove thin;}                                                                
+		/*控制cellpadding*/
+		.menu-dev{
+			display: none;
+		}
+		.active{
+			display:block;
+		}
+		.mask {       
+            position: fixed; top: 0px; filter: alpha(opacity=60); background-color: #777;     
+            z-index: 99; left: 0px;     
+            opacity:0.5; -moz-opacity:0.5;     
+        }     
+        
+        .active-click{
+        	border: groove thin #007AFF !important;
+        	color: #007AFF !important;
+        }
+		</style>
+	</head>
+
+	<body>
+		<div style="z-index: 1000; position: fixed;margin:0;width: 100%;text-align: center;background-color: white;" >
+			<div style="background-color: white;z-index: 100;" class="menu-dev" id="before_div">
+				<table width="100%" class="menu-table">
+					<tr>
+						<td class="active-click" typeId="1">装修灵感</td>
+						<td typeId="2">装修须知</td>
+						<td typeId="3">装修合同</td>
+					</tr>
+					<tr>
+						<td typeId="4">装修预算</td>
+						<td typeId="5">装修风水</td>
+						<td typeId="6">装修设计</td>
+					</tr>
+					<tr>
+						<td typeId="7">装修要点</td>
+					</tr>
+				</table>
+			</div>
+			<div style="background-color: white;z-index: 100;" class="menu-dev" id="runing_div">
+				<table width="100%"  border="1" class="menu-table" >
+					<tr>
+						<td typeId="8">装修选材</td>
+						<td typeId="9">建材安装</td>
+						<td typeId="10">拆改工程</td>
+					</tr>
+					<tr>
+						<td typeId="11">水电工程 </td>
+						<td typeId="12">防水工程</td>
+						<td typeId="13">泥瓦工程</td>
+					</tr>
+					<tr>
+						<td typeId="14">水木工程</td>
+						<td typeId="15">油漆工程</td>
+					</tr>
+				</table>
+			</div>
+			<div style="background-color: white;z-index: 1000;" class="menu-dev" id="after_div">
+				<table width="100%"  border="1" class="menu-table" >
+					<tr>
+						<td typeId="16">装修污染</td>
+						<td typeId="17">装修验收</td>
+						<td typeId="18">家居护理</td>
+					</tr>
+					<tr>
+						<td typeId="19">家居配饰</td>
+						<td typeId="20">家电家私</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--下拉刷新容器-->
+		<div id="news_list_sub_div" class="mui-content mui-scroll-wrapper">
+			
+			<div id="slider" class="mui-slider" >
+				<div class="mui-slider-group" id="ad_pic_div">
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="" style="height: 200px;">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="" style="height: 200px;">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="" style="height: 200px;">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="" style="height: 200px;">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+		</div>
+			<ul id="news_list_sub_ul" class="mui-table-view">
+				
+			</ul>
+		</div>
+		<div id="mask" class="mask"></div>   
+		<script type="text/arttemp" id="ad_pic_div_tpl">
+			{{each list2 as value i}}
+		       <div class="mui-slider-item" >
+					<a href="#">
+						<img src="{{value.headPic}}" style="height: 150px;">
+					</a>
+				</div>
+		    {{/each}}
+		</script>
+		
+		<script type="text/arttemp" id="news_list_sub_tpl">
+			{{each list as value i}}
+		        <li class="mui-table-view-cell mui-media " id="{{value.id}}" >
+					<img src="{{value.headPic}}" class="mui-media-object mui-pull-right">
+					<div class="mui-media-body">
+						{{value.titile}}
+						<p class="mui-ellipsis">{{value.secTitle}}</p>
+					</div>
+				</li>
+		    {{/each}}
+		</script>
+		<script type="text/javascript" src="../js/jquery-1.11.1.js" ></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.lazyload.js"></script>
+		<script src="../js/mui.lazyload.img.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/base.js" ></script>
+		<script type="text/javascript" src="../js/bs/dic.js" ></script>
+		<script type="text/javascript" src="../js/bs/news-list-sub.js" ></script>
+		<script>
+			NewsListSub.init();
+		</script>
+	</body>
+
+</html>
